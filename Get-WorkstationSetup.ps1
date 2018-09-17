@@ -11,7 +11,7 @@ invoke-expression ((new-object net.webclient).DownloadString('https://chocolatey
 choco feature enable -n allowGlobalConfirmation
 
 # Get a basic setup recipe
-invoke-restmethod 'https://gist.githubusercontent.com/rrxtns/96b339d6218d611b139762b9eb56983c/raw/2987d7c8301b60f1b16b5348caffa48778182751/simple-workstation.rb' | out-file -encoding ascii -filepath c:/simple-workstation.rb
+invoke-restmethod 'https://gist.githubusercontent.com/sntxrr/96b339d6218d611b139762b9eb56983c/raw/2987d7c8301b60f1b16b5348caffa48778182751/simple-workstation.rb' | out-file -encoding ascii -filepath c:/simple-workstation.rb
 
 # Use Chef Apply to setup 
 chef-apply c:/simple-workstation.rb
@@ -30,9 +30,9 @@ if(!(Test-Path $filePath)) {
 };
 
 # Place Get-Buffer.ps1 so we can output awesome looking code
-invoke-restmethod 'https://raw.githubusercontent.com/rrxtns/Set-PowerShellProfile/master/Get-Buffer.ps1' | out-file -encoding ascii -filepath C:/Users/$env:UserName/Documents/Get-Buffer.ps1
+invoke-restmethod 'https://raw.githubusercontent.com/sntxrr/Set-PowerShellProfile/master/Get-Buffer.ps1' | out-file -encoding ascii -filepath C:/Users/$env:UserName/Documents/Get-Buffer.ps1
 # Now place the PowerShell profile
-invoke-restmethod 'https://raw.githubusercontent.com/rrxtns/Set-PowerShellProfile/master/Set-PowerShellProfile.ps1' | out-file -encoding ascii -filepath C:/Users/$env:UserName/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1
+invoke-restmethod 'https://raw.githubusercontent.com/sntxrr/Set-PowerShellProfile/master/Set-PowerShellProfile.ps1' | out-file -encoding ascii -filepath C:/Users/$env:UserName/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1
 # Now lets update the Path
 $env:Path += ";C:\Users\$env:UserName\Documents\"
 
